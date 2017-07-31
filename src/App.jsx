@@ -7,8 +7,15 @@ import InstaSpot from "./components/InstaSpot.jsx";
 import { Fullpage, Slide } from "fullpage-react";
 // const Main = styled.body`widh: device-width;`;
 
+const Main = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: papayawhip;
+  font-family: arial;
+`;
+
 const fullPageOptions = {
-  scrollSensitivity: 2,
+  scrollSensitivity: 7,
   hideScrollBars: true,
   enableArrowKeys: true
 };
@@ -31,7 +38,11 @@ const slides = [
 fullPageOptions.slides = slides;
 
 const App = () => {
-  return <Fullpage {...fullPageOptions} />;
+  return (
+    <Main>
+      <Fullpage {...fullPageOptions} />
+    </Main>
+  );
 };
 
 export default App;

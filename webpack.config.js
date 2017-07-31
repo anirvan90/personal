@@ -7,7 +7,7 @@ module.exports = {
     filename: "bundle.js"
   },
   module: {
-    loaders: [
+    rules: [
       {
         loader: "babel-loader",
         test: /\.jsx?$/
@@ -15,6 +15,10 @@ module.exports = {
       {
         test: /\.png/,
         use: "file-loader?name=[path][name].[ext]&outputPath=images/"
+      },
+      {
+        test: /\.svg$/,
+        loader: "svg-inline-loader"
       }
     ]
   },
